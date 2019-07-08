@@ -1,0 +1,25 @@
+version: "2"
+services:
+  groceryfrontend:
+    image: groceryfrontend
+    ports:
+      - "127.0.0.1:3000:3000"
+    networks:
+      - network
+
+  nodebackend:
+    image: nodebackend
+    ports:
+      - "127.0.0.1:9096:9096"
+    networks:
+      - network
+
+  grocerybackend:
+    image: grocerybackend
+    ports:
+      - "127.0.0.1:9080:9080"
+    networks:
+      - network
+
+networks:
+  network:
